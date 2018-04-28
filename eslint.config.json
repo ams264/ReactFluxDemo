@@ -1,12 +1,16 @@
 {
   "root": true,
-  "ecmaFeatures": {
-    "jsx": true
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
+
   "env": {
     "browser": true,
     "node": true,
-    "jquery": true
+    "jquery": true,
+    "es6": true
   },
   "rules": {
     "quotes": 0,
@@ -14,7 +18,7 @@
     "eol-last": 0,
     "no-unused-vars": 0,
     "no-underscore-dangle": 0,
-    "no-alert": 0,
+    "no-alert": 1,
     "no-lone-blocks": 0
   },
   "globals": {
