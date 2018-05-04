@@ -2,14 +2,16 @@ $ = jquery = require('jquery');
 var React = require('react');
 var ReactDOM = require('react-dom')
 var Home = require('./components/homePage.js');
-var About = require('./components/about/aboutPage.js')
-var Header = require('./components/common/header.js')
+var Authors = require('./components/authors/authorPage.js');
+var About = require('./components/about/aboutPage.js');
+var Header = require('./components/common/header.js');
 
 class App extends React.Component {
   render() {
     var Child;
     switch(this.props.route) {
       case 'about': Child = About; break;
+      case 'authors': Child = Authors; break;
       default: Child = Home;
     }
 
