@@ -32,4 +32,4 @@ class AuthorPage extends React.Component {
   }
 }
 
-module.exports = AuthorPage
+module.exports.default = AuthorPage

@@ -47,4 +47,4 @@ var AuthorApi = {
 	}
 };
 
-module.exports = AuthorApi;
+module.exports.default = AuthorApi;

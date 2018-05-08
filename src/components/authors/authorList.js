@@ -35,4 +35,4 @@ AuthorList.propTypes = {
   authors: PropTypes.array.isRequired
 };
 
-module.exports = AuthorList
+module.exports.default = AuthorList
