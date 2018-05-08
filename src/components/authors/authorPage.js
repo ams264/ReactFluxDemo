@@ -1,42 +1,35 @@
 "use strict"
 
-var React = require('react')
-var AuthorApi = require('../../api/authorApi.js')
+var React = require('react');
+var AuthorApi = require('../../api/authorApi.js');
+var AuthorList = require('./authorList.js');
 
-class Authors extends React.Component {
+class AuthorPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { authors:[] };
+    this.state = {
+      isMounted: false,
+      authors:[]
+    }
   }
 
-  UNSAFE_componentWillMount(){
+  componentDidMount(){
+    this.state.isMounted = true;
     this.setState({ authors: AuthorApi.getAllAuthors() })
   }
 
+  componentWillUnmount(){
+    this.state.isMounted = false;
+  }
+
   render(){
-  function createAuthorRow(author){
-      return(
-        <tr key={author.id}>
-          <td><a href={"./#authors/" + author.id}>{author.id}</a></td>
-          <td>{author.firstName} {author.lastName}</td>
-        </tr>
-      )
-    }
     return(
       <div>
         <h1>Authors</h1>
-        <table className='table'>
-          <thead>
-            <th>ID</th>
-            <th>Name</th>
-          </thead>
-          <tbody>
-            {this.state.authors.map(createAuthorRow, this)}
-          </tbody>
-        </table>
+        <AuthorList  authors={this.state.authors}/>
       </div>
     )
   }
 }
 
-module.exports = Authors
+module.exports = AuthorPage

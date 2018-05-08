@@ -18,6 +18,7 @@
     "gulp-eslint": "^4.0.2",
     "gulp-open": "^3.0.1",
     "jquery": "^3.3.1",
+    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-router": "^4.2.0",
